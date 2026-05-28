@@ -53,9 +53,7 @@ export function ChatWindow({ thread }: { thread: Thread }) {
   }, [messages, status, thread]);
 
   const textareaRef = useRef<HTMLTextAreaElement | null>(null);
-  useEffect(() => {
-    textareaRef.current?.focus();
-  }, [thread.id, status]);
+  void textareaRef;
 
   const handleSubmit = async (msg: PromptInputMessage) => {
     const text = msg.text.trim();
@@ -82,21 +80,21 @@ export function ChatWindow({ thread }: { thread: Thread }) {
       <Conversation className="flex-1">
         <ConversationContent className="mx-auto w-full max-w-3xl px-4 py-6">
           {messages.length === 0 ? (
-            <ConversationEmptyState
-              className="py-12"
-              icon={
-                <img
-                  src={logo}
-                  alt=""
-                  width={64}
-                  height={64}
-                  className="opacity-90"
-                />
-              }
-              title={`How can I help with ${mode.short.toLowerCase()}?`}
-              description="Pick a starter or just type your own request."
-            >
-              <div className="mt-4 grid w-full max-w-xl gap-2">
+            <div className="flex flex-col items-center py-12 text-center">
+              <img
+                src={logo}
+                alt=""
+                width={64}
+                height={64}
+                className="mb-3 opacity-90"
+              />
+              <h3 className="text-base font-semibold">
+                How can I help with {mode.short.toLowerCase()}?
+              </h3>
+              <p className="mt-1 text-sm text-muted-foreground">
+                Pick a starter or just type your own request.
+              </p>
+              <div className="mt-6 grid w-full max-w-xl gap-2">
                 {mode.starters.map((s) => (
                   <button
                     key={s}
@@ -107,7 +105,7 @@ export function ChatWindow({ thread }: { thread: Thread }) {
                   </button>
                 ))}
               </div>
-            </ConversationEmptyState>
+            </div>
           ) : (
             messages.map((m) => {
               const text = m.parts
@@ -163,9 +161,9 @@ export function ChatWindow({ thread }: { thread: Thread }) {
         <div className="mx-auto w-full max-w-3xl">
           <PromptInput onSubmit={handleSubmit}>
             <PromptInputTextarea
-              ref={textareaRef}
               placeholder={mode.placeholder}
               disabled={isBusy}
+              autoFocus
             />
             <PromptInputFooter className="justify-between">
               <span className="text-xs text-muted-foreground">
