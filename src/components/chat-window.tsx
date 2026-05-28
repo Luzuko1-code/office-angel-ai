@@ -8,7 +8,6 @@ import remarkGfm from "remark-gfm";
 import {
   Conversation,
   ConversationContent,
-  ConversationEmptyState,
   ConversationScrollButton,
 } from "@/components/ai-elements/conversation";
 import { Message, MessageContent } from "@/components/ai-elements/message";
@@ -52,8 +51,6 @@ export function ChatWindow({ thread }: { thread: Thread }) {
     });
   }, [messages, status, thread]);
 
-  const textareaRef = useRef<HTMLTextAreaElement | null>(null);
-  void textareaRef;
 
   const handleSubmit = async (msg: PromptInputMessage) => {
     const text = msg.text.trim();
