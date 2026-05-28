@@ -124,7 +124,7 @@ export function ChatWindow({ thread }: { thread: Thread }) {
               }
               return (
                 <Message key={m.id} from="assistant">
-                  <MessageContent variant="flat" className="px-0">
+                  <MessageContent className="!bg-transparent !p-0">
                     {text ? (
                       <div className="prose prose-invert prose-sm max-w-none">
                         <ReactMarkdown remarkPlugins={[remarkGfm]}>
@@ -144,7 +144,7 @@ export function ChatWindow({ thread }: { thread: Thread }) {
             messages.length > 0 &&
             messages[messages.length - 1]?.role === "user" && (
               <Message from="assistant">
-                <MessageContent variant="flat" className="px-0">
+                <MessageContent className="!bg-transparent !p-0">
                   <Shimmer>Thinking...</Shimmer>
                 </MessageContent>
               </Message>
