@@ -65,61 +65,42 @@
 /* Rich Olive — single dark theme */
 :root {
   --radius: 0.75rem;
-/* Olive & Gold — sophisticated, inviting, easy on the eyes */
-:root {
-  --radius: 0.75rem;
-  --background: oklch(0.16 0.02 95);
-  --foreground: oklch(0.95 0.02 90);
-  --card: oklch(0.2 0.025 100);
-  --card-foreground: oklch(0.95 0.02 90);
-  --popover: oklch(0.2 0.025 100);
-  --popover-foreground: oklch(0.95 0.02 90);
-  --primary: oklch(0.78 0.13 85);
-  --primary-foreground: oklch(0.18 0.03 100);
-  --secondary: oklch(0.26 0.035 110);
-  --secondary-foreground: oklch(0.95 0.02 90);
-  --muted: oklch(0.23 0.025 105);
-  --muted-foreground: oklch(0.72 0.04 95);
-  --accent: oklch(0.55 0.1 110);
-  --accent-foreground: oklch(0.98 0.01 90);
-  --destructive: oklch(0.6 0.2 25);
-  --destructive-foreground: oklch(0.99 0.005 90);
-  --border: oklch(0.3 0.04 100);
-  --input: oklch(0.28 0.035 105);
-  --ring: oklch(0.78 0.13 85);
-  --chart-1: oklch(0.78 0.13 85);
-  --chart-2: oklch(0.6 0.11 115);
-  --chart-3: oklch(0.7 0.14 95);
-  --chart-4: oklch(0.5 0.09 130);
-  --chart-5: oklch(0.82 0.11 80);
-  --sidebar: oklch(0.13 0.02 105);
-  --sidebar-foreground: oklch(0.94 0.02 90);
-  --sidebar-primary: oklch(0.78 0.13 85);
-  --sidebar-primary-foreground: oklch(0.18 0.03 100);
-  --sidebar-accent: oklch(0.22 0.03 110);
-  --sidebar-accent-foreground: oklch(0.95 0.02 90);
-  --sidebar-border: oklch(0.27 0.035 105);
-  --sidebar-ring: oklch(0.78 0.13 85);
+  --background: oklch(0.13 0.03 120);
+  --foreground: oklch(0.97 0.01 120);
+  --card: oklch(0.17 0.04 120);
+  --card-foreground: oklch(0.97 0.01 120);
+  --popover: oklch(0.17 0.04 120);
+  --popover-foreground: oklch(0.97 0.01 120);
+  --primary: oklch(0.65 0.18 120);
+  --primary-foreground: oklch(0.99 0.005 120);
+  --secondary: oklch(0.23 0.04 120);
+  --secondary-foreground: oklch(0.97 0.01 120);
+  --muted: oklch(0.21 0.03 120);
+  --muted-foreground: oklch(0.7 0.03 120);
+  --accent: oklch(0.27 0.06 120);
+  --accent-foreground: oklch(0.97 0.01 120);
+  --destructive: oklch(0.62 0.22 25);
+  --destructive-foreground: oklch(0.99 0.005 120);
+  --border: oklch(0.27 0.04 120);
+  --input: oklch(0.27 0.04 120);
+  --ring: oklch(0.65 0.18 120);
+  --chart-1: oklch(0.65 0.18 120);
+  --chart-2: oklch(0.7 0.14 140);
+  --chart-3: oklch(0.75 0.12 100);
+  --chart-4: oklch(0.78 0.14 80);
+  --chart-5: oklch(0.7 0.16 160);
+  --sidebar: oklch(0.1 0.03 120);
+  --sidebar-foreground: oklch(0.97 0.01 120);
+  --sidebar-primary: oklch(0.65 0.18 120);
+  --sidebar-primary-foreground: oklch(0.99 0.005 120);
+  --sidebar-accent: oklch(0.2 0.04 120);
+  --sidebar-accent-foreground: oklch(0.97 0.01 120);
+  --sidebar-border: oklch(0.24 0.04 120);
+  --sidebar-ring: oklch(0.65 0.18 120);
 }
 
 
 @layer base {
-  * {
-    border-color: var(--color-border);
-  }
-
-  body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
-    background-image:
-      radial-gradient(at 12% 8%, oklch(0.32 0.06 90 / 0.35) 0px, transparent 55%),
-      radial-gradient(at 88% 92%, oklch(0.28 0.05 115 / 0.3) 0px, transparent 55%),
-      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.85  0 0 0 0 0.75  0 0 0 0 0.4  0 0 0 0.05 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
-    background-attachment: fixed;
-    background-repeat: no-repeat, no-repeat, repeat;
-  }
-}
-
   * {
     border-color: var(--color-border);
   }
